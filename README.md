@@ -355,7 +355,60 @@ Go to the browser, then everything is still as before.
 	
 #### 9. Computed Properties
 	
+Computed property is a property that you can use to define data whose value depends on other data.
+
+For example, suppose you want to display data based on certain keywords such as search.
+
+For more details, change the code "App.vue" to be like this:
 	
+```
+<template>
+  <!-- input search box -->
+  <input type="text" v-model="search" placeholder="Search..." />
+  <ul>
+    <!-- loop data from Computed Properties filterProducts -->
+    <li v-for="product in filterProducts" v-bind:key="product.id">
+      {{ product.title }} - {{ product.price }}
+    </li>
+  </ul>
+</template>
+ 
+<script>
+export default {
+  name: "App",
+  data() {
+    return {
+      search: "",
+      products: [],
+    };
+  },
+  // Created Lifecycle hooks
+  created() {
+    this.products = [
+      { id: 1, title: "Product 1", price: 5000 },
+      { id: 2, title: "Product 2", price: 4500 },
+      { id: 3, title: "Product 3", price: 3700 },
+      { id: 4, title: "Product 4", price: 1200 },
+    ];
+  },
+  // Computed Properties
+  computed: {
+    filterProducts() {
+      // filter product from array
+      return this.products.filter((product) => {
+        // Return title = search
+        return product.title.match(this.search);
+      });
+    },
+  },
+};
+</script>
+ 
+<style>
+</style>
+```
+	
+
 	
 
 	

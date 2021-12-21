@@ -1,4 +1,5 @@
 # Vue JS 3 App For Beginners
+### Read this document carefully and try to make api using vue js 3
 
 #### 1. Vue CLI
 

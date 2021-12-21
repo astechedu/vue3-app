@@ -429,9 +429,7 @@ Vue.js is often used to build Single Page Application (SPA) with multiple compon
 
 For more details, create a component file named “Header.vue” in the “src/components” folder.
 
-Then type the following code:
-	
-	
+Then type the following code:	
 	
 ```
 <template>
@@ -728,20 +726,20 @@ After that, change the code in the "App.vue" file to be like this:
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #3c4e60;
 }
  
 #nav {
-  padding: 30px;
+  padding: 32px;
 }
  
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #7c2e83;
 }
  
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #16b894;
 }
 </style>
 ```

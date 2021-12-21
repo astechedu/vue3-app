@@ -64,6 +64,17 @@ http://localhost:8080/
 ```
 
 #### 3. Folder Structure
+there are 3 folders, namely: node_modules, public, and src folders.
+The node_modules folder contains all the modules needed to build the project.
+
+The public folder contains index.html and favicon.ico files, index.html files represent Single Page Application (SPA).
+The src folder contains the App.vue, main.js, assets folder, and components folder.
+The App.vue file is the root component file of the vue js application, the main.js file is the entry point.
+
+The assets folder is a folder that contains images or other resources needed to build applications.
+
+While the components folder is a folder that will contain all the components needed to build the application.
+By default, there is one component which is HelloWorld.vue.
 
 Please delete the HelloWorld.vue component file, because we don't need it, then change the code in App.vue to be like this:
 

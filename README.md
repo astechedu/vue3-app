@@ -757,3 +757,5 @@ Now, you have learned about what vue.js is, why to use vue.js, Vue CLI, to Vue R
 
 Thanks to all	
 :+1:	
+
+![](https://avatars.githubusercontent.com/u/75734516?s=48&v=4) 

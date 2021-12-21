@@ -407,16 +407,350 @@ export default {
 <style>
 </style>
 ```
-	
 
-	
+In the code above, it can be seen that there is one text input that functions for searching.
 
-	
-	
-	
-	
-	
-	
-	
+In the logic there is a computed property in which there is one function, namely: filterProducts.
 
+The filterProducts function serves to search data based on the same title as keywords from input text.
 
+Back to the browser, if it runs well, it will look like the following image:
+	
+If you want to define data whose value depends on other data, then you can use the computed property.
+	
+#### 10. Components
+	
+One of the important concepts you should know in vue.js is components.
+
+Vue.js is often used to build Single Page Application (SPA) with multiple components.
+
+For more details, create a component file named “Header.vue” in the “src/components” folder.
+
+Then type the following code:
+	
+	
+	
+```
+<template>
+  <h2>Hello World</h2>
+</template>
+ 
+<script>
+export default {
+  name: "Header",
+};
+</script>
+ 
+<style>
+</style>
+```
+	
+After that, change the code "App.vue" to be like this:
+	
+```
+<template>
+  <!-- Output Header Component -->
+  <Header />
+</template>
+ 
+<script>
+// Import Header Component
+import Header from "./components/Header";
+ 
+export default {
+  name: "App",
+  // Define Header Component in components Property
+  components: {
+    Header,
+  },
+};
+</script>
+ 
+<style>
+</style>
+```
+	
+In the code above it can be seen that to be able to use the "Header" component, you need to import the component file, then register the component in the Components Property, after that you can output the component to the DOM.  
+
+Back to the browser, if it runs well, it will look like the following image:
+	
+	
+#### 11. Props
+
+Props function to send data or values from Parent Components to child components.
+
+For example, change the code “App.vue” to be like this:
+	
+```
+<template>
+  <!-- Bind Props in Header Component -->
+  <Header v-bind:TextHeader="text" />
+</template>
+ 
+<script>
+// Import Header Component
+import Header from "./components/Header";
+ 
+export default {
+  name: "App",
+  components: {
+    Header,
+  },
+  // Data Property
+  data() {
+    return {
+      text: "Welcome To M Fikri",
+    };
+  },
+};
+</script>
+ 
+<style>
+</style>
+```
+	
+Then change the code "Header.vue" in the "src/components" folder to be as follows:
+	
+	
+```
+<template>
+  <!-- Output Header -->
+  <h2>{{ TextHeader }}</h2>
+</template>
+ 
+<script>
+export default {
+  name: "Header",
+  // Props Property
+  props: ["TextHeader"],
+};
+</script>
+ 
+<style>
+</style>
+```
+	
+In the code above, you can see that there are property props that accept the TextHeader value that comes from the parent component, namely "App.vue".
+
+Back to the browser, if it runs well, it will look like the following image:
+	
+#### 12. Custom Events
+
+Unlike props, custom events function to send data from child components to parent components..
+
+For example, change the code “Header.vue” in the “src/components” folder to be as follows:	
+
+```
+<template>
+  <!-- Output Header Components -->
+  <h2>{{ TextHeader }}</h2>
+  <button v-on:click="changeText">Change Title</button>
+</template>
+ 
+<script>
+export default {
+  name: "Header",
+  // Props Property
+  props: ["TextHeader"],
+  // Data Property
+  data() {
+    return {
+      text: "Welcome To The Jungle",
+    };
+  },
+  // Methods Property
+  methods: {
+    changeText() {
+      this.$emit("changeTitle", this.text);
+    },
+  },
+  // Emits Property
+  emits: ["changeTitle"],
+};
+</script>
+ 
+<style>
+</style>
+```
+	
+Then, change the code "App.vue" to be like this:
+	
+```
+<template>
+  <!-- Output Header Component -->
+  <Header @changeTitle="changeTitle" v-bind:TextHeader="text" />
+</template>
+ 
+<script>
+// Import Header Component
+import Header from "./components/Header";
+ 
+export default {
+  name: "App",
+  components: {
+    Header,
+  },
+  // Data Property
+  data() {
+    return {
+      text: "Welcome To M Fikri",
+    };
+  },
+  // Methods Property
+  methods: {
+    changeTitle(newTitle) {
+      this.text = newTitle;
+    },
+  },
+};
+</script>
+ 
+<style>
+</style>	
+```
+	
+The code above serves to change the header text from "Welcome to M Fikri" to "Welcome To The Jungle".
+
+Where the text "Welcome To The Jungle" comes from child components.
+
+Back to the browser, then click the "Change Title" button.
+	
+Gp to browser: 
+If it goes well, then the header text will change to "Welcome To The Jungle" as shown 
+	
+#### 13. Vue Router	
+	
+Vue Router serves to render specific components with specific URLs.
+
+In contrast to multiple page applications, vue routers do not make requests to the server, but instead render certain components on the client side.
+
+To use Vue Router on vue.js using Vue CLI can be done easily by creating a new project.
+
+Therefore, create a new vue.js project with the following command in CMD (Command Prompt) or terminal:
+	
+```
+vue create vue-router-project
+```
+
+"vue-router-project” is the name of the project to be created.
+	
+If you created it in a different folder, you can use the CD (Change Directory) command to go to your folder.
+	
+After running the above command, the following options will appear:
+	
+1. Select => “Manually select features”.
+2. Then, select “Choose Vue version, Babel, and Router” then Enter.
+3. Select Vue version 3.x, then Enter
+
+If the installation is complete, open the "vue-router-project" project then you will find a folder structure
+	
+	
+In the picture above, there are additional 2 folders in the "src" folder, namely: "router" and "views".
+
+In the "router" folder there is an "index.js" file which functions to control all routes from the project being built.
+
+While in the "views" folder there are "Home.vue" and "About.vue" files that function for the display or page you want to use on the route.
+
+To make sure all projects run well, run the project by typing the following command in the terminal:
+	
+	
+```
+npm run serve
+```
+	
+Then go back to the browser, and visit the following URL:
+http://localhost:8080/
+http://localhost:8080/about
+	
+For example, create a “Contact.vue” file in the “src/views” folder, then type the following code:
+	
+```
+<template>
+  <div class="about">
+    <h1>This is an contact page</h1>
+  </div>
+</template>
+```
+	
+Then change the code in the “index.js” file in the “src/router” folder to be as follows:
+	
+	
+```
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../views/Home.vue'
+ 
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../views/About.vue')
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/Contact.vue')
+  }
+]
+ 
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
+ 
+export default router	
+```	
+	
+	
+After that, change the code in the "App.vue" file to be like this:
+	
+	
+```
+<template>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/contact">Contact</router-link>
+  </div>
+  <router-view />
+</template>
+ 
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+ 
+#nav {
+  padding: 30px;
+}
+ 
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+ 
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
+```
+Return to the browser, then click the “Contact” menu or visit the following URL:
+	
+http://localhost:8080/contact	
+	
+	
+#### Conclusion:
+
+The discussion this time is about the Vue.js 3 tutorial for beginners.
+
+Now, you have learned about what vue.js is, why to use vue.js, Vue CLI, to Vue Router.	
+
+:+1:	

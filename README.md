@@ -305,7 +305,7 @@ It may look confusing, but it's really not.
 For more details, change the code "App.vue" to be like this:
 	
 ```
-	<template>
+<template>
   <!-- if data exist -->
   <div v-if="products.length">
     <ul>
@@ -555,7 +555,7 @@ export default {
   // Data Property
   data() {
     return {
-      text: "Welcome To The Jungle",
+      text: "Welcome To The Home",
     };
   },
   // Methods Property
@@ -609,14 +609,14 @@ export default {
 </style>	
 ```
 	
-The code above serves to change the header text from "Welcome to M Fikri" to "Welcome To The Jungle".
+The code above serves to change the header text from "Welcome to Ajay Sisaudiya" to "Welcome To The Home".
 
-Where the text "Welcome To The Jungle" comes from child components.
+Where the text "Welcome To The Home" comes from child components.
 
 Back to the browser, then click the "Change Title" button.
 	
 Gp to browser: 
-If it goes well, then the header text will change to "Welcome To The Jungle" as shown 
+If it goes well, then the header text will change to "Welcome To The Home" as shown 
 	
 #### 13. Vue Router	
 	

@@ -288,7 +288,80 @@ In the code above, you can see that we use "v-if" and "v-for" together.
 		
 Go back to the browser to make sure there are no errors.
 	
+#### #8. Lifecycle Hooks
+	
+One of the very important things for you to know in vue.js is lifecycle hooks.
 
+Lifecycle hooks are a window into how the library you are using works behind the scenes. Lifecycle hooks let you know when your component was created, added to the DOM, updated, or destroyed.
+
+There are many lifecycle hooks in vue.js such as created, beforeCreate, mounted, beforeMount, updated, beforeUpdate, and others.
+
+In this tutorial, I will only utilize one lifecycle hook which is: created.
+
+Lifecycle hooks “created” are lifecycle hooks that are first executed after initializing the component and allow you to access reactive data and events before the template and Virtual DOM are mounted and rendered.
+
+It may look confusing, but it's really not.
+
+For more details, change the code "App.vue" to be like this:
+	
+```
+	<template>
+  <!-- if data exist -->
+  <div v-if="products.length">
+    <ul>
+      <!-- loop data -->
+      <li v-for="product in products" v-bind:key="product.id">
+        {{ product.title }} - {{ product.price }}
+      </li>
+    </ul>
+  </div>
+  <!-- if no data -->
+  <div v-else>
+    <p>No Data</p>
+  </div>
+</template>
+ 
+<script>
+export default {
+  name: "App",
+  data() {
+    return {
+      products: [],
+    };
+  },
+  // Created Lifecycle hooks
+  created() {
+    this.products = [
+      { id: 1, title: "Product 1", price: 5000 },
+      { id: 2, title: "Product 2", price: 4500 },
+      { id: 3, title: "Product 3", price: 3700 },
+      { id: 4, title: "Product 4", price: 1200 },
+    ];
+  },
+};
+</script>
+ 
+<style>
+</style>
+```
+	
+In the code above, it can be seen that in the data property there are products with an empty array.
+
+Meanwhile the data is moved to the lifecycle hooks created. This works so that the data is loaded before the Virtual DOM is rendered to the DOM.
+
+If you want to run a function that was before the Virtual DOM rendered, then you can put that function into the lifecycle hooks created.
+	
+Go to the browser, then everything is still as before.
+	
+#### 9. Computed Properties
+	
+	
+	
+
+	
+	
+	
+	
 	
 	
 	

@@ -499,7 +499,7 @@ export default {
   // Data Property
   data() {
     return {
-      text: "Welcome To M Fikri",
+      text: "Welcome To AJAY SISAUDIYA",
     };
   },
 };

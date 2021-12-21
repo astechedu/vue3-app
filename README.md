@@ -753,4 +753,5 @@ The discussion this time is about the Vue.js 3 tutorial for beginners.
 
 Now, you have learned about what vue.js is, why to use vue.js, Vue CLI, to Vue Router.	
 
+Thanks to all	
 :+1:	

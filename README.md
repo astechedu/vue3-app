@@ -270,10 +270,11 @@ export default {
   data() {
     return {
       products: [
-        { id: 1, title: "Product 1", price: 5000 },
-        { id: 2, title: "Product 2", price: 4500 },
-        { id: 3, title: "Product 3", price: 3700 },
-        { id: 4, title: "Product 4", price: 1200 },
+        { id: 1, title: "Product 1", price: 6000 },
+        { id: 2, title: "Product 2", price: 5500 },
+        { id: 3, title: "Product 3", price: 4700 },
+        { id: 4, title: "Product 4", price: 1300 },
+	{ id: 5, title: "Product 5", price: 1000 },
       ],
     };
   },
@@ -332,10 +333,11 @@ export default {
   // Created Lifecycle hooks
   created() {
     this.products = [
-      { id: 1, title: "Product 1", price: 5000 },
-      { id: 2, title: "Product 2", price: 4500 },
-      { id: 3, title: "Product 3", price: 3700 },
-      { id: 4, title: "Product 4", price: 1200 },
+        { id: 1, title: "Product 1", price: 6000 },
+        { id: 2, title: "Product 2", price: 5500 },
+        { id: 3, title: "Product 3", price: 4700 },
+        { id: 4, title: "Product 4", price: 1300 },
+	{ id: 5, title: "Product 5", price: 1000 },
     ];
   },
 };
@@ -385,10 +387,11 @@ export default {
   // Created Lifecycle hooks
   created() {
     this.products = [
-      { id: 1, title: "Product 1", price: 5000 },
-      { id: 2, title: "Product 2", price: 4500 },
-      { id: 3, title: "Product 3", price: 3700 },
-      { id: 4, title: "Product 4", price: 1200 },
+        { id: 1, title: "Product 1", price: 6000 },
+        { id: 2, title: "Product 2", price: 5500 },
+        { id: 3, title: "Product 3", price: 4700 },
+        { id: 4, title: "Product 4", price: 1300 },
+	{ id: 5, title: "Product 5", price: 1000 },
     ];
   },
   // Computed Properties

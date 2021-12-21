@@ -111,7 +111,7 @@ export default {
 
 Then go to the browser, then you will see results like the following:
 
-#### Name Ajay Sisaudiya
+##### Name Ajay Sisaudiya
 
 You can also change the data via method.
 
@@ -147,7 +147,7 @@ The changeName function is called when the “Change Name” button is clicked.
 
 Return to the browser, then click the "Change Name" button.
 
-#### #5. Data Binding
+#### 5. Data Binding
 
 
 Data binding is an important feature that you must know when building a vue.js application.
@@ -184,16 +184,16 @@ f you look at the code above, there is an <a> tag with the href attribute taking
 You can NOT make it like this:
 1
 	
-<a href="url">GO TO MFIKRI.COM</a>
+<a href="url">GO TO MYSITE.COM</a>
 
 Or like this:
 1
 	
-<a href="{{ url }}">GO TO MFIKRI.COM</a>
+<a href="{{ url }}">GO TO MYSITE.COM</a>
 
 That's why you need data binding. By utilizing data binding, you can make attributes or classes dynamic.
 
-  ### #6. Two-Way Data Binding
+  #### 6. Two-Way Data Binding
   
   
 

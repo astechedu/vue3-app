@@ -1,6 +1,21 @@
 # Vue JS 3 App For Beginners
 ### Read this document carefully and try to make api using vue js 3
 
+### Steps:
+	1. Vue CLI
+	2. Creating a new project using Vue CLI
+	3. Folder Structure
+	4. Data and Methods
+	5. Data Binding
+	6. Two-Way Data Binding
+	7. Conditionals and Loops  
+	8. Lifecycle Hooks
+	9. Computed Properties
+       10. Components
+       11. Props
+       12. Custom Events
+       13. Vue Router
+
 #### 1. Vue CLI
 
 To install NPM, you just need to install Node.js.

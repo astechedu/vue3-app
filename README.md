@@ -11,7 +11,7 @@
 	7. Conditionals and Loops  
 	8. Lifecycle Hooks
 	9. Computed Properties
- 	10. Components
+       10. Components
  	11. Props
  	12. Custom Events
  	13. Vue Router
